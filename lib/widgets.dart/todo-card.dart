@@ -1,8 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 
 class TodoCard extends StatelessWidget {
-  const TodoCard({super.key});
+  
+final String vartitle;
+final doneORnot;
+const TodoCard({super.key, required this.vartitle,required this.doneORnot });
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +21,14 @@ class TodoCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "breakfast",
+                        vartitle,
                         style: TextStyle(fontSize: 22, color: Colors.white),
                       ),
                       Icon(
-                        Icons.close,
+                          doneORnot ? Icons.check : Icons.close ,
+
                         size: 27,
-                        color: Colors.red,
+                        color: doneORnot ? Colors.green :Colors.red ,
                       ),
                     ],
                   ),
